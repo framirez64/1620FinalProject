@@ -47,7 +47,7 @@ class Gui():
         self.label_invalid2.pack()
 
     def hide_main_menu(self):
-        # Hide Old Widgets
+        """ Method for hiding Old Widgets"""
         self.label_Menu.pack_forget()
         self.frame_Menu.pack_forget()
         self.label_Shop.pack_forget()
@@ -56,7 +56,7 @@ class Gui():
         self.frame_Quit.pack_forget()
 
     def hide_cart_menu(self):
-        #Hide Cart Menu
+        """Method for hiding the Cart Menu"""
         self.label_CartMenu.forget()
         self.frame_CartMenu.forget()
         self.label_Total.forget()
@@ -75,17 +75,17 @@ class Gui():
 
 
     def main_menu_to_cart_menu(self):
-        #Switches Windows
+        """Method that switches Windows"""
         self.hide_main_menu()
         self.show_cart_menu()
 
     def cart_menu_to_my_cart(self):
-        #Switches Windows
+        """Method that swithces windows by triggering two functions"""
         self.hide_cart_menu()
         self.show_my_cart()
 
     def show_cart_menu(self):
-        # Display New Widgets starting with cart Menu
+        """Method for displaying New Widgets starting with cart Menu"""
         self.frame_CartMenu = Frame(self.window)
         self.label_CartMenu = Label(self.frame_CartMenu, text='Cart Menu', font=('Algerian', 20))
         self.label_CartMenu.pack(pady=10)
@@ -126,7 +126,7 @@ class Gui():
         self.label_sub.pack()
         self.frame_sub.pack()
     def show_my_cart(self):
-        # Display New Widgets starting with my cart title
+        """Method that displays the My Cart window"""
         self.frame_mycart = Frame(self.window)
         self.label_mycart = Label(self.frame_mycart, text='My Cart', font=('Algerian', 20))
         self.label_mycart.pack(pady=10)
@@ -178,11 +178,11 @@ class Gui():
         self.water_item.pack(pady=50)
 
     def quit(self):
-        #Function for Quit button
+        """Method for triggering window to close"""
         self.window.quit()
 
     def item_amounts(self):
-        #Changes value of cookie,sandwhich, and water amounts
+        """Method for changing the value of cookie,water, and sandwhich labels to the inputted amount"""
         cookie_value = int(self.input_cookie.get())
         self.cookie_sum.set(cookie_value)
         sandwhich_value = int(self.input_Sandwhich.get())
@@ -191,7 +191,7 @@ class Gui():
         self.water_sum.set(water_value)
 
     def calc_total(self):
-        #Creates the label for the total cost
+        """Method that creates the label for the total cost"""
         self.frame_final = Frame(self.window)
         self.label_final = Label(self.frame_final,textvariable=self.final_cost,font=('Algerian',20))
         self.frame_final.pack()

@@ -1,10 +1,6 @@
 
-
-
-
-
-
 def submit(self):
+    """Method called by gui to calculate the total cost of desired items"""
     # Calculations for total cost of items
     self.label_invalid2.config(text="")
     try:
